@@ -497,3 +497,28 @@ body {
     object-fit: cover;
   }
 }
+/* ====== تعديل مهم لمركزية المحتوى ومنع التمرير الأفقي ====== */
+body {
+    overflow-x: hidden; /* يمنع التمرير الأفقي */
+}
+
+.container {
+    max-width: 1000px;  /* أقصى عرض للحاويات */
+    width: 90%;         /* عرض نسبي مع الشاشة */
+    margin: 0 auto;     /* يركّز في النص */
+}
+
+.hero-content,
+.intro-text .container,
+.logo-explanation,
+.colors-meanings .container,
+.details-grid,
+.gallery {
+    margin: 0 auto;     /* توسيط كل الحاجات */
+    text-align: center; /* النصوص في النص */
+}
+
+img, video {
+    max-width: 100%;    /* الصور والفيديو متجاوبة مع العرض */
+    height: auto;
+}
