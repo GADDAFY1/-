@@ -774,3 +774,24 @@ img, video {
     color: #ffffff;
     letter-spacing: 1px;
 }
+/* ==== تعديل الـ nav والشعار على الموبايل ==== */
+@media (max-width: 768px) {
+    .nav-links a {
+        font-size: 14px;   /* صغر حجم النص عشان يناسب الموبايل */
+        padding: 5px 8px;
+    }
+
+    .logo {
+        width: 150px;       /* تصغير الشعار شوية */
+        margin-left: 10px;  /* حرك الشعار ناحية الشمال */
+    }
+
+    .header-container {
+        justify-content: flex-start; /* يخلي الشعار والـ nav اقرب للشمال */
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;           /* يخفف المسافة بين الاختيارات */
+    }
+}
