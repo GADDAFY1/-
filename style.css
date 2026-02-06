@@ -479,3 +479,12 @@ h2 {
     background: rgba(0, 0, 0, 0); /* طبقة تغميق فوق الفيديو */
     z-index: -1;
 }
+@media (max-width: 768px) {
+  .bg-video {
+    width: 100%;        /* خلي الفيديو يملى العرض */
+    height: auto;       /* خليه يتناسب مع الطول */
+    top: 0;
+    left: 0;
+    object-fit: cover;  /* يخلي الفيديو يملأ العرض بدون تشويه */
+  }
+}
