@@ -466,25 +466,31 @@ h2 {
     max-width: 180%;         /* تجاوب مع الشاشات الصغيرة */
     border-radius: 10px;    /* لو تحب حواف مدورة */
 }
-.gallery-section {
-    position: relative;
-    z-index: 1;
-    background: transparent;
+/* ====== تعديل الفيديو عشان يظهر كامل على كل الشاشات ====== */
+.hero {
+    position: relative; /* حاوية للهيرو */
+    overflow: hidden;   /* أي جزء زايد يختفي */
 }
 
-.gallery-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0); /* طبقة تغميق فوق الفيديو */
-    z-index: -1;
+.bg-video {
+    position: absolute; /* بدل fixed */
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1; /* تحت النصوص */
 }
+
 @media (max-width: 768px) {
   .bg-video {
-    width: 100%;        /* خلي الفيديو يملى العرض */
-    height: auto;       /* خليه يتناسب مع الطول */
-    top: 0;
-    left: 0;
-    object-fit: cover;  /* يخلي الفيديو يملأ العرض بدون تشويه */
+    width: auto;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
   }
 }
