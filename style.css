@@ -552,3 +552,225 @@ img, video {
     max-width: 100%;    /* الصور والفيديو متجاوبة مع العرض */
     height: auto;
 }
+/* ====== قسم الخاتمة ====== */
+.conclusion {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.conclusion h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #00ff9d;
+    position: relative;
+}
+
+.conclusion h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #00ff9d;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.conclusion p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.9;
+    color: white;
+}
+/* ====== ألقاب أسفل الموقع ====== */
+.titles-footer {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.titles-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title-box {
+    background: rgba(0, 255, 157, 0.1);
+    border: 2px solid #00ff9d;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.title-box:hover {
+    background: #00ff9d;
+    color: black;
+    transform: translateY(-5px);
+}
+@media (max-width: 600px) {
+    .titles-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+/* رفع المستطيل اللي في النص */
+.center-box {
+    position: relative;
+    transform: translateY(-15px); /* يطلع لفوق */
+}
+
+/* كلمة Leader فوق المستطيل */
+.leader-label {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00ff9d;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+.title-box:hover {
+    box-shadow: 0 0 12px rgba(0, 255, 149, 0.35);
+    transform: translateY(-6px) scale(1.02);
+}
+
+}
+/* شكل شريط النسبة */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #00ff9d, #00c3ff);
+    border-radius: 10px;
+    transition: width 0.8s ease-in-out;
+}
+
+/* عند المرور بالماوس يظهر الشريط */
+.title-box:hover .progress-bar span {
+    width: attr(style width); /* احتياطي */
+}
+.title-content {
+    position: relative;
+    text-align: center;
+}
+
+.title-text {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+.hover-text {
+    display: none;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.title-box:hover .title-text {
+    opacity: 0;
+}
+
+.title-box:hover .hover-text {
+    display: block;
+}
+
+.bubble-bar {
+    width: 100%;
+    height: 24px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 8px;
+}
+
+.bubble-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: radial-gradient(circle, #ff00ea 30%, #00c3ff 70%);
+    border-radius: 20px;
+    position: relative;
+    transition: width 1.2s ease-in-out;
+}
+
+.bubble-bar span::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 10px 6px, rgba(255, 255, 255, 0.7) 2px, transparent 3px);
+    background-size: 20px 12px;
+    animation: bubblesMove 1s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes bubblesMove {
+    from { background-position: 0 0; }
+    to { background-position: 20px 0; }
+}
+
+/* النسب */
+.title-box.p0:hover .bubble-bar span { width: 0%; }
+.title-box.p100:hover .bubble-bar span { width: 100%; }
+.percent-text {
+    display: none;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    animation: fadeIn 1s ease forwards;
+}
+
+.title-box:hover .percent-text {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.section-divider {
+    margin: 60px auto;
+    width: 60%;
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00ff958e, transparent);
+    border-radius: 5px;
+}
+.team-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #367a5e71;
+}
+
+/* نسب جديدة */
+.p40:hover .bubble-bar span { width: 40%; }
+.p45:hover .bubble-bar span { width: 45%; }
+.p15:hover .bubble-bar span { width: 15%; }
+.team-section-title {
+    text-align: center;
+    font-size: 26px;
+    margin: 20px 0 40px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
